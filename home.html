@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breast Cancer Prediction</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(120deg, #f6f9fc, #e9f0f7);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: none;
+        }
+
+        .card-header {
+            background: #6f42c1;
+            color: white;
+            border-radius: 15px 15px 0 0;
+            text-align: center;
+        }
+
+        textarea {
+            resize: none;
+            border-radius: 10px;
+        }
+
+        label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .btn-primary {
+            background: #6f42c1;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 30px;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background: #59339d;
+        }
+
+        .result-box textarea {
+            background: #f8f9fa;
+            font-weight: 600;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Breast Cancer Prediction System</h3>
+                    <p class="mb-0">Enter medical parameters to get prediction</p>
+                </div>
+
+                <div class="card-body">
+                    <form action="http://localhost:5000" method="POST">
+
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label>texture_mean</label>
+                                <textarea class="form-control" rows="2" name="query1">{{query1}}</textarea>
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label>perimeter_mean</label>
+                                <textarea class="form-control" rows="2" name="query2">{{query2}}</textarea>
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label>smoothness_mean</label>
+                                <textarea class="form-control" rows="2" name="query3">{{query3}}</textarea>
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label>compactness_mean</label>
+                                <textarea class="form-control" rows="2" name="query4">{{query4}}</textarea>
+                            </div>
+
+                            <div class="col-md-12 form-group">
+                                <label>symmetry_mean</label>
+                                <textarea class="form-control" rows="2" name="query5">{{query5}}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-primary">
+                                Predict
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <!-- Result Section -->
+            <div class="card mt-4 result-box">
+                <div class="card-body">
+                    <textarea class="form-control mb-2" rows="2">{{output1}}</textarea>
+                    <textarea class="form-control" rows="2">{{output2}}</textarea>
+                </div>
+            </div>
+
+            <div class="footer-text">
+                © 2026 Breast Cancer Prediction | ML + Flask
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
