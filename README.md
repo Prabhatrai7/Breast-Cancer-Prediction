@@ -82,7 +82,7 @@ python app.py
 
 http://127.0.0.1:5000
 
-📊 Model Prediction Logic
+## 📊 Model Prediction Logic
 
 The model is trained using key features related to breast cancer measurements. It predicts whether the tumor is:
 
